@@ -34,6 +34,7 @@ services:
   kibana:
     build:
       context: kibana/
+    user: 1000:1000
     volumes:
       - ./kibana/config/:/usr/share/kibana/config:ro
     ports:
@@ -54,3 +55,6 @@ services:
     logging:
       options:
         max-size: 50m
+volumes:
+  esdata1:
+    driver: local
