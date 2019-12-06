@@ -5,3 +5,12 @@
 server.name: kibana
 server.host: "0.0.0.0"
 elasticsearch.hosts: ["http://elasticsearch:9200"]
+
+map.regionmap:
+  includeElasticMapsService: false
+  layers:
+    - name: "Trentino"
+      url: "http://0.0.0.0:5000/geojson"
+      fields:
+        - name: "NOME"
+          description: "Comune"

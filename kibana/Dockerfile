@@ -27,3 +27,6 @@ WORKDIR "/opt/kibana"
 #WORKDIR "/opt/kibana"
 
 
+CMD ["/usr/local/bin/kibana-docker","--allow-root"]
+
+
