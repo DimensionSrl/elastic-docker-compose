@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   elasticsearch:
@@ -44,14 +44,15 @@ services:
     logging:
       options:
         max-size: 50m
-  grafana:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    depends_on:
-      - elasticsearch
-    volumes:
-      - ./grafana/data/:/var/lib/grafana
-    logging:
-      options:
-        max-size: 50m
+  
+  # grafana:
+  #   image: grafana/grafana
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - elasticsearch
+  #   volumes:
+  #     - ./grafana/data/:/var/lib/grafana
+  #   logging:
+  #     options:
+  #       max-size: 50m

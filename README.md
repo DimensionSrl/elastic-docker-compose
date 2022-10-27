@@ -1,9 +1,11 @@
 # elastic-docker-compose
-A docker-compose cluster with the Elastic stack
+A docker compose cluster with the Elastic stack
+
+# SECURITY DISABLED – DO NOT USE IN PRODUCTION
 
 ## Usage
 
-`docker-compose up`
+`docker compose up`
 
 Kibana: http://localhost:5601
 
