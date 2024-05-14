@@ -4,23 +4,15 @@
 #
 cluster.name: "docker-cluster"
 network.host: 0.0.0.0
-
-# minimum_master_nodes need to be explicitly set when bound on a public IP
-# set to 1 to allow single node clusters
-# Details: https://github.com/elastic/elasticsearch/pull/17288
-# discovery.zen.minimum_master_nodes: 1
+cluster.routing.allocation.disk.threshold_enabled: false
 
 ## Use single node discovery in order to disable production mode and avoid bootstrap checks
 ## see https://www.elastic.co/guide/en/elasticsearch/reference/current/bootstrap-checks.html
 #
 discovery.type: single-node
 
-# xpack.security.enabled: true
-# action.auto_create_index: ".ent-search-*-logs-*,-.ent-search-*,+*"
-# xpack.security.authc.token.enabled: true
-# xpack.security.transport.ssl.enabled: true
-# xpack.security.authc.api_key.enabled: true
-
+bootstrap.memory_lock: true
 xpack.security.enabled: false
+xpack.security.enrollment.enabled: false
 xpack.security.transport.ssl.enabled: false
 xpack.security.http.ssl.enabled: false
