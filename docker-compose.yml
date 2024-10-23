@@ -44,19 +44,19 @@ services:
     logging:
       options:
         max-size: 50m
-  # filebeat:
-  #   build:
-  #     context: filebeat/
-  #   volumes:
-  #     - ./filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
-  #     - ./filebeat/config/inputs/:/usr/share/filebeat/inputs/:ro
-  #     - ./filebeat/data:/usr/share/filebeat/data:rw
-  #     - ./filebeat/exports:/mnt/exports:ro
-  #   depends_on:
-  #     - elasticsearch
-  #   logging:
-  #     options:
-  #       max-size: 50m
+  filebeat:
+    build:
+      context: filebeat/
+    volumes:
+      - ./filebeat/config/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
+      - ./filebeat/config/inputs/:/usr/share/filebeat/inputs/:ro
+      - ./filebeat/data:/usr/share/filebeat/data:rw
+      - ./filebeat/exports:/mnt/exports:rw
+    depends_on:
+      - elasticsearch
+    logging:
+      options:
+        max-size: 50m
 
   # grafana:
   #   image: grafana/grafana
